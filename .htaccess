@@ -1,0 +1,2 @@
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([a-zA-Z0-9-]+)/?$ $1.php [L]

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PuffPixel</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <h1>PuffPixel</h1>
+  <h2>Thumbnail Generator for YouTube, Instagram, Facebook & More</h2>
+
+  <form id="thumbnailForm" enctype="multipart/form-data">
+    <label>Main Image (Required)</label>
+    <input type="file" id="mainImage" name="mainImage" accept="image/*" required>
+
+    <label>Watermark Image (Optional - Bottom Right)</label>
+    <input type="file" id="watermark" name="watermark" accept="image/*">
+
+    <label>Platform</label>
+    <select id="platform" name="platform">
+      <option value="custom">Custom</option>
+      <option value="youtube">YouTube (1280x720)</option>
+      <option value="instagram">Instagram Square (1080x1080)</option>
+      <option value="instagram-story">Instagram Story/Reels (1080x1920)</option>
+      <option value="facebook">Facebook Post (1200x630)</option>
+      <option value="twitter">X/Twitter (1200x675)</option>
+    </select>
+
+    <label>Aspect Ratio (if Custom)</label>
+    <select id="aspect" name="aspect">
+      <option value="16:9">16:9 (Landscape - YouTube)</option>
+      <option value="1:1">1:1 (Square - Instagram)</option>
+      <option value="9:16">9:16 (Portrait - Stories/Reels)</option>
+      <option value="4:5">4:5 (Instagram Portrait)</option>
+      <option value="1.91:1">1.91:1 (Facebook/Twitter)</option>
+    </select>
+
+    <label>
+      <input type="checkbox" id="upscale" name="upscale"> Upscale image if smaller than target resolution
+    </label>
+
+    <label>Title (Centered Overlay)</label>
+    <input type="text" id="title" name="title" placeholder="Enter bold title text">
+
+    <label>Link / URL (Top Left Corner)</label>
+    <input type="text" id="link" name="link" placeholder="e.g. https://yoursite.com">
+
+    <button type="submit">Generate Thumbnail</button>
+  </form>
+
+  <div id="error"></div>
+
+  <div id="preview"></div>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
